@@ -3,9 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Jobs\EventMonitorJob;
+use highjin\QueueMonitor\Data\MockResultData;
+use highjin\QueueMonitor\EventMonitor;
 use Illuminate\Console\Command;
-use Napopravku\EventMonitor\Data\AbstractData;
-use Napopravku\EventMonitor\Events\MockResultEvent;
+use highjin\QueueMonitor\Data\AbstractData;
+use highjin\QueueMonitor\Events\MockResultEvent;
 
 class DispatchCommand extends Command
 {
@@ -25,9 +27,7 @@ class DispatchCommand extends Command
 
     public function handle()
     {
-        $data = new AbstractData();
-        $data->jobId = 'qqwrqwr952359uge7w';
-        $job = new EventMonitorJob(new MockResultEvent($data));
-        dispatch($job);
+        $data = new MockResultData(['qqwt'=>'qtqwtqwt','hrejnreh'=>123215,'xzvxzv'=>'qwtqtw'],null, MockResultData::MOCK_STATUS_SENT);
+        EventMonitor::mockResult($data);
     }
 }

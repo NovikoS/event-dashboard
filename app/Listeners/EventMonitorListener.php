@@ -2,17 +2,17 @@
 
 namespace App\Listeners;
 
-use App\Models\EventDashboard;
-use Napopravku\EventMonitor\Events\EventInterface;
+use highjin\QueueMonitor\Events\EventInterface;
+use highjin\QueueMonitor\Events\MockResultEvent;
+use highjin\QueueMonitor\Models\Monitor;
 
 class EventMonitorListener
 {
-    public function handle(EventInterface $event)
+    public function handle(MockResultEvent $event)
     {
-        $monitor = new EventDashboard();
-        $monitor->job_id = rand();
-        $monitor->status = 'listener';
-        $monitor->event_data = json_encode($event);
+        $monitor = Monitor::ordered()->first();
+        $monitor->data = $event->data->data ? json_encode($event->data->data) : null;
+        $monitor->exception_message = $event->data->errors ? json_encode($event->data->errors) : null;
         $monitor->save();
     }
 }

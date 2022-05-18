@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use highjin\QueueMonitor\Traits\IsMonitored;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,11 +10,12 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Napopravku\EventMonitor\Events\EventInterface;
+use highjin\QueueMonitor\Events\EventInterface;
 
 class EventMonitorJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use IsMonitored;
 
     public EventInterface $event;
 

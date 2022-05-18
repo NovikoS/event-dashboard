@@ -9,23 +9,20 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/napopravku/events"
-        },
-        {
             "type": "path",
-            "url": "napopravku/event-monitor"
+            "url": "napopravku/monitor"
         }
     ],
     "require": {
         "php": "^8.0.2",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "guzzlehttp/guzzle": "^7.2",
+        "highjin/monitor": "dev-master",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
-        "napopravku/event-monitor": "dev-master",
-        "napopravku/events": "dev-master",
+        "nesbot/carbon": "^2.58",
         "predis/predis": "^1.1"
     },
     "require-dev": {
