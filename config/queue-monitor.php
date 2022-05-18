@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'queue' => env('MONITOR_QUEUE', 'monitor_queue'),
     /*
      * Set the table to be used for monitoring data.
      */
@@ -33,7 +34,7 @@ return [
         /*
          *  Show custom data stored on model
          */
-        'show_custom_data' => true,
+        'show_custom_data' => false,
 
         /**
          * Allow the deletion of single monitor items.
