@@ -23,11 +23,10 @@ class DispatchCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Тестовая команда для диспатча различных ивентов для монитора';
 
     public function handle()
     {
-        $data = new MockResultData(['qqwt'=>'qtqwtqwt','hrejnreh'=>123215,'xzvxzv'=>'qwtqtw'],null, MockResultData::MOCK_STATUS_SENT);
-        EventMonitor::mockResult($data);
+        EventMonitor::mockResult(['qqwt'=>'qtqwtqwt','hrejnreh'=>123215,'xzvxzv'=>'qwtqtw'], null, MockResultData::MOCK_STATUS_SENT);
     }
 }
