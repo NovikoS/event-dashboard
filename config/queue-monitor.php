@@ -29,12 +29,12 @@ return [
         /*
          * Set the monitored jobs count to be displayed per page.
          */
-        'per_page' => 35,
+        'per_page' => 5,
 
         /*
          *  Show custom data stored on model
          */
-        'show_custom_data' => false,
+        'show_custom_data' => true,
 
         /**
          * Allow the deletion of single monitor items.

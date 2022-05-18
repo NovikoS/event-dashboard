@@ -1278,7 +1278,7 @@
             "dist": {
                 "type": "path",
                 "url": "napopravku/monitor",
-                "reference": "1805b1550712293062ebfb77b34837e7da7e1c0b"
+                "reference": "694956e6257da4d86aa99f7e2a8808ce92d5fa67"
             },
             "require": {
                 "ext-json": "*",
