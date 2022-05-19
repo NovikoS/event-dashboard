@@ -1278,12 +1278,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NovikoS/monitor.git",
-                "reference": "fbf5ed635ec26c7b8cf0d3651446550e69cac537"
+                "reference": "2939ffa262bdecd897cfc09c1336f7ce773ff3fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NovikoS/monitor/zipball/fbf5ed635ec26c7b8cf0d3651446550e69cac537",
-                "reference": "fbf5ed635ec26c7b8cf0d3651446550e69cac537",
+                "url": "https://api.github.com/repos/NovikoS/monitor/zipball/2939ffa262bdecd897cfc09c1336f7ce773ff3fc",
+                "reference": "2939ffa262bdecd897cfc09c1336f7ce773ff3fc",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
                 "source": "https://github.com/NovikoS/monitor/tree/master",
                 "issues": "https://github.com/NovikoS/monitor/issues"
             },
-            "time": "2022-05-18T21:42:32+00:00"
+            "time": "2022-05-19T14:11:22+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8628,5 +8628,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
