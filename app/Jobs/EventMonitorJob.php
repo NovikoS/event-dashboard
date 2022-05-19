@@ -14,7 +14,10 @@ use highjin\QueueMonitor\Events\EventInterface;
 
 class EventMonitorJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
     use IsMonitored;
 
     public EventInterface $event;
