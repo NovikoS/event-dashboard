@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1c4dad2dccb19a9c91d846fb795dc04",
+    "content-hash": "e8b21856977ed465c6c915682652e87d",
     "packages": [
         {
             "name": "brick/math",
@@ -1275,10 +1275,16 @@
         {
             "name": "highjin/monitor",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NovikoS/monitor.git",
+                "reference": "fbf5ed635ec26c7b8cf0d3651446550e69cac537"
+            },
             "dist": {
-                "type": "path",
-                "url": "napopravku/monitor",
-                "reference": "694956e6257da4d86aa99f7e2a8808ce92d5fa67"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NovikoS/monitor/zipball/fbf5ed635ec26c7b8cf0d3651446550e69cac537",
+                "reference": "fbf5ed635ec26c7b8cf0d3651446550e69cac537",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -1298,6 +1304,7 @@
                 "phpstan/phpstan": "^0.12.99|^1.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1331,9 +1338,11 @@
                 }
             ],
             "description": "Queue Monitoring for Laravel Database Job Queue",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NovikoS/monitor/tree/master",
+                "issues": "https://github.com/NovikoS/monitor/issues"
+            },
+            "time": "2022-05-18T21:42:32+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8619,5 +8628,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

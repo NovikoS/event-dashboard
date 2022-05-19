@@ -9,8 +9,8 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "napopravku/monitor"
+            "type": "vcs",
+            "url": "https://github.com/NovikoS/monitor"
         }
     ],
     "require": {

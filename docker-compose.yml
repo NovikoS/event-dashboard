@@ -1,0 +1,51 @@
+version: '3.8'
+
+networks:
+  proxy:
+    name: proxy
+  workspace:
+    name: workspace
+  local:
+    driver: bridge
+
+volumes:
+  libraries:
+    name: libraries
+    external: true
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./.docker/php/Dockerfile
+      args:
+        - LIBRARY_PATH=${LIBRARY_PATH}
+        - DEV_MODE=true
+    environment:
+      - XDEBUG_CLIENT_HOST=${XDEBUG_CLIENT_HOST:-172.17.0.1}
+    restart: always
+    networks:
+      - workspace
+      - local
+    volumes:
+      - ./:/var/www
+      - libraries:${LIBRARY_PATH}
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./.docker/nginx/Dockerfile
+    restart: always
+    volumes_from:
+      - php
+    depends_on:
+      - php
+    networks:
+      proxy:
+        aliases:
+          - ${CONTEINER_ALIASE}
+      local:
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.personal.rule=HostRegexp(`job-monitor.{host:.+}`)
+      - traefik.http.services.personal.loadbalancer.server.port=80

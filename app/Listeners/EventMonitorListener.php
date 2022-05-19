@@ -10,7 +10,7 @@ class EventMonitorListener
 {
     public function handle(MockResultEvent $event)
     {
-        $monitor = Monitor::ordered()->first();
+        $monitor = Monitor::where('job_id', $event->data->jobUID)->first();
         $monitor->data = $event->data->data ? json_encode($event->data->data) : null;
         $monitor->exception_message = $event->data->errors ? json_encode($event->data->errors) : null;
         $monitor->save();
